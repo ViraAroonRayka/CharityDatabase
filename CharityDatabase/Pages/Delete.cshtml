@@ -1,0 +1,26 @@
+﻿@page
+@model CharityDatabase.Pages.DeleteModel
+@{
+}
+<h1>آیا از حذف این مددجو مطمین هستید؟</h1>
+@if (Model.needeeToDelete != null)
+{
+    <h2>@(Model.needeeToDelete.FirstName + " " +Model.needeeToDelete.LastName)</h2>
+}
+<form method="post" class="form-group">
+    <input type="submit" value="حذف شود" class="btn btn-primary" />
+    <input type="reset" value="خیر" class="btn btn-outline-primary" />
+
+</form>
+@if (ViewData["Error"] != null)
+{
+    <div class="alert-danger">
+        @ViewData["Error"]
+    </div>
+}
+@if (ViewData["Success"] != null)
+{
+    <div class="alert-info">
+        @ViewData["Success"]
+    </div>
+}
