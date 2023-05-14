@@ -33,13 +33,21 @@
                 <td>@n.NationalCode</td>
                 <td>@n.Gender</td>
                 <td>@n.Educations</td>
-                <td>@((bool)n.IsMarried?"متاهل":"مجرد")</td>
+                <td>
+                    @if (n.IsMarried != null)
+                    {
+                        @((bool)n.IsMarried ? "متاهل" : "مجرد")
+                    }
+                </td>
                 <td>@n.Job</td>
                 <td>@n.Revenue</td>
-                <td>@((bool)n.HasHouse?"بلی":"خیر")</td>
-                <td>@n.BirthDate</td>
-                <td><a href="Delete?Id=@n.Id" >حذف</a> | <a href="Edit?Id=@n.Id">ویرایش</a> | <a href="Details?Id=@n.Id">جزئبات</a></td>
-            </tr>
+                @if (n.HasHouse != null)
+                {
+                    <td>@((bool)n.HasHouse ? "بلی" : "خیر")</td>
+                }
+                    <td>@n.BirthDate</td>
+                    <td><a href="Delete?Id=@n.Id">حذف</a> | <a href="Edit?Id=@n.Id">ویرایش</a> | <a href="Details?Id=@n.Id">جزئبات</a></td>
+                </tr>
             }
 
         </tbody>

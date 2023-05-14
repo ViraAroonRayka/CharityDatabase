@@ -1,0 +1,51 @@
+﻿@page
+@model CharityDatabase.Pages.Needee.EditModel
+@{
+}
+<h1>ویرایش اطلاعات مددجو: @(Model.needeeToEdit.FirstName+" "+Model.needeeToEdit.LastName)</h1>
+<form method="post">
+    <table>
+        <tr>
+            <td>نام: </td>
+            <td> <input type="text" name="FirstNameTextBox" value="@Model.needeeToEdit.FirstName" /></td>
+        </tr>
+        <tr>
+            <td>نام خانوادگی: </td>
+            <td> <input type="text" name="LastNameTextBox" value="@Model.needeeToEdit.LastName"/></td>
+        </tr>
+        <tr>
+            <td>کد ملی: </td>
+            <td> <input type="number" name="NationalCodeTextBox" value="@Model.needeeToEdit.NationalCode"/></td>
+        </tr>
+        <tr>
+            <td>تلفن: </td>
+            <td> <input type="tel" name="PhoneTextBox" /></td>
+        </tr>
+
+        <tr>
+            <td>جنسیت: </td>
+            <td>
+                <select name="Gender">
+                    <option>مرد</option>
+                    <option>زن</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="به روز رسانی اطلاعات مددجو" /></td>
+            <td><input type="reset" value="پاک کردن" /></td>
+        </tr>
+    </table>
+</form>
+<div>
+
+    @if (ViewData["NeedeeInfo"] != null)
+    {
+        <p>
+            ویرایش با مشخصات زیر با موفقیت انجام شد
+        </p>
+        @ViewData["NeedeeInfo"];
+
+    }
+
+</div>

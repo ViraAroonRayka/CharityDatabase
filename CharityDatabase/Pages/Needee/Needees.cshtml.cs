@@ -11,7 +11,7 @@ namespace CharityDatabase.Pages
     public class NeedeesModel : PageModel
     {
         private readonly CharitySystemContext _context = new CharitySystemContext();
-        public List<Needee> needees;
+        public List<Db.Needee> needees;
         public NeedeesModel()
         {
             needees = _context.Needees.OrderBy(n=>n.FirstName).ToList();

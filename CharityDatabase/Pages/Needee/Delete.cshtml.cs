@@ -11,7 +11,7 @@ namespace CharityDatabase.Pages
     public class DeleteModel : PageModel
     {
         private readonly CharitySystemContext _context = new CharitySystemContext();
-        public Needee needeeToDelete = null;
+        public Db.Needee needeeToDelete = null;
         public void OnGet()
         {
         }

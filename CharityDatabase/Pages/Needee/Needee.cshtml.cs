@@ -22,7 +22,7 @@ namespace CharityDatabase.Pages
             string gender = Request.Form["Gender"];
 
             ViewData["NeedeeInfo"] = firstName + " " + lastName + " کد ملی " + nationalCode;
-            Needee needee = new Needee()
+            Db.Needee needee = new Db.Needee()
             {
                 FirstName = firstName,
                 LastName = lastName,
